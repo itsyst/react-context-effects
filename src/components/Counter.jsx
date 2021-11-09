@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Fragment } from 'react';
- 
+import UserContext from '../context/userContext';
+
 export class Counter extends Component {
 	state = {
 		count: 0
@@ -12,12 +13,19 @@ export class Counter extends Component {
 
 	render() {
 		return (
-			<div>
-				<Fragment>
-					<div> Count: {this.state.count} </div>
-					<button onClick={this.increaseCount}> Increase </button>
-				</Fragment>
-			</div>
+			<UserContext.Consumer>
+				{(userContext) => (
+					<div>
+						<Fragment>
+							<div> Count: {this.state.count} </div>
+							<button onClick={this.increaseCount}>
+								Increase
+							</button>
+						</Fragment>
+						<p>{userContext.name}</p>
+					</div>
+				)}
+			</UserContext.Consumer>
 		);
 	}
 }
