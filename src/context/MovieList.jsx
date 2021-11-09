@@ -3,7 +3,7 @@ import MovieRow from './MovieRow';
 import UserContext from './userContext';
 
 class MovieList extends Component {
-    static contextType = UserContext;
+	static contextType = UserContext;
 	componentDidMount() {
 		console.log('context:', this.context);
 	}
@@ -14,9 +14,19 @@ class MovieList extends Component {
 				{(userContext) => (
 					<div>
 						<h1>Movie List</h1>
-						<p>Name: {userContext.name}</p>
-                        <p>Email: {userContext.email}</p>
-                        <MovieRow/>
+						<p>
+							Name:
+							{userContext.currentUser
+								? userContext.currentUser.name
+								: '...'}
+						</p>
+						<p>
+							Email:
+							{userContext.currentUser
+								? userContext.currentUser.email
+								: '...'}
+						</p>
+						<MovieRow />
 					</div>
 				)}
 			</UserContext.Consumer>

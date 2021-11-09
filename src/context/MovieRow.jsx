@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import withTooltip from '../components/withTooltip';
+import Login from './Login';
 import UserContext from './userContext';
 
 function MovieRow(props) {
@@ -8,9 +9,20 @@ function MovieRow(props) {
 		<div>
 			<h1>Movie Row</h1>
 			<ul>
-				<li>{currentUser.name}</li>
-				{props.showTooltip && <li>{currentUser.email}</li>}
+				<li>
+					{currentUser.currentUser
+						? currentUser.currentUser.name
+						: '...'}
+				</li>
+				{props.showTooltip && (
+					<li>
+						{currentUser.currentUser
+							? currentUser.currentUser.email
+							: '...'}
+					</li>
+				)}
 			</ul>
+			<Login />
 		</div>
 	);
 }

@@ -10,15 +10,21 @@ import UserContext from './context/userContext'
 import './App.css';
 
 class App extends Component {
-  state = {
-    currentUser: {
-      name: "Khaled",
-      email: "khaled@domain.com"
-    }
+  state = { currentUser: null }
+
+  handleLogin = (username) => {
+    console.log("User: ", username);
+    this.setState({ currentUser: username })
   }
+
+
   render() {
     return (
-      <UserContext.Provider value={this.state.currentUser}>
+      <UserContext.Provider value={
+        {
+          currentUser: this.state.currentUser,
+          onLogin: this.handleLogin
+        }}>
         <div className="App">
           <Movie id={1} />
           <Genre id={2} />
