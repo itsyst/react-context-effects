@@ -7,5 +7,5 @@ export default function useDocumentTitle(title) {
         return () => {
             console.log('Clean up!');
         };
-    });
+    }, [title]);  // Add `title` as a dependency to avoid unnecessary re-renders
 } 

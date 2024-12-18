@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import UserContext from './userContext';
 
-function Login(props) {
+const Login = () => {
 	const currentUser = useContext(UserContext);
 	const user = {
 		name: 'Khaled',
 		email: 'khaled@domain.com'
 	};
 	return (
-		<div>
-			<button onClick={() => currentUser.onLogin(user)}>Login</button>
-		</div>
+		<button className="btn btn-primary" onClick={() => currentUser.onLogin(user)}>
+			Login
+		</button>
 	);
-}
+};
 
 export default Login;

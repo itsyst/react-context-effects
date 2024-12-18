@@ -1,30 +1,29 @@
-import React from 'react';
+import { useState } from 'react';
 
 function withTooltip(Component) {
-	return class WithTooltip extends React.Component {
-		state = {
-			showTooltip: false
+	function WithTooltip(props) {
+		const [showTooltip, setShowTooltip] = useState(false);
+
+		const mouseOver = () => {
+			setShowTooltip(true);
 		};
 
-		mouseOver = () => {
-			this.setState({ showTooltip: true });
+		const mouseOut = () => {
+			setShowTooltip(false);
 		};
 
-		mouseOut = () => {
-			this.setState({ showTooltip: false });
-		};
+		return (
+			<div onMouseOver={mouseOver} onMouseOut={mouseOut}>
+				<Component showTooltip={showTooltip} {...props} />
+			</div>
+		);
+	}
 
-		render() {
-			return (
-				<div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-					<Component
-						showTooltip={this.state.showTooltip}
-						{...this.props}
-					/>
-				</div>
-			);
-		}
-	};
+	// Set a display name for debugging
+	const componentName = Component.displayName || Component.name || 'Component';
+	WithTooltip.displayName = `withTooltip(${componentName})`;
+
+	return WithTooltip;
 }
 
 export default withTooltip;

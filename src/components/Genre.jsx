@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
 import withTooltip from './withTooltip';
+import PropTypes from 'prop-types';
 
-class Genre extends Component {
-	render() {
-		return (
-			<div>
-				<h1>Genre</h1>
-				{this.props.showTooltip && <p>Show tooltip</p>}
-			</div>
-		);
-	}
-}
+const Genre = ({ showTooltip }) => {
+	return (
+		<div className="d-flex flex-row bd-highlight mb-3">
+			<h2>Genre</h2>
+			{showTooltip && <p className="px-2">Show tooltip Genre</p>}
+		</div>
+	);
+};
+
+Genre.prototype = {
+	showTooltip: PropTypes.bool.isRequired
+};
 
 export default withTooltip(Genre);

@@ -1,33 +1,26 @@
-import React, { Component } from 'react';
-import { Fragment } from 'react';
+import { useState } from 'react';
 import UserContext from '../context/userContext';
 
-export class Counter extends Component {
-	state = {
-		count: 0
+const Counter = () => {
+	const [count, setCount] = useState(0);
+
+	const increaseCount = () => {
+		setCount(count + 1);
 	};
 
-	increaseCount = () => {
-		this.setState({ count: this.state.count + 1 });
-	};
-
-	render() {
-		return (
-			<UserContext.Consumer>
-				{(userContext) => (
-					<div>
-						<Fragment>
-							<div> Count: {this.state.count} </div>
-							<button onClick={this.increaseCount}>
-								Increase
-							</button>
-						</Fragment>
-						<p>{userContext.name}</p>
-					</div>
-				)}
-			</UserContext.Consumer>
-		);
-	}
-}
+	return (
+		<UserContext.Consumer>
+			{(userContext) => (
+				<div className="d-flex flex-row bd-highlight mb-3 align-items-center">
+					<div className="pe-2"> Count: {count} </div>
+					<button className="btn btn-primary" onClick={increaseCount}>
+						Increase
+					</button>
+					<p>{userContext.name}</p>
+				</div>
+			)}
+		</UserContext.Consumer>
+	);
+};
 
 export default Counter;
