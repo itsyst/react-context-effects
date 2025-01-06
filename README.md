@@ -28,5 +28,6 @@ yarn install
 <a href="https://github.com/itsyst/react-context-effects">
  <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-1.png" alt="home" border="0"> 
  <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-2.png" alt="login" border="0"> 
- <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-1.png" alt="movies" border="0"> </a>
+ <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-1.png" alt="movies" border="0">
+</a>
 
