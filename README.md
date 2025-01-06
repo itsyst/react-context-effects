@@ -1,8 +1,32 @@
-# React + Vite
+# Movie and Genre Display Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React component renders details about a movie, including genres and actors, with an optional tooltip showing additional information like awards and a poster image.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `components/Genre.tsx` - Main component for displaying movie genres and actors.
+- `hoc/withTooltip.tsx` - Higher-order component to wrap components with tooltip functionality.
+- `types/MovieType.ts` - TypeScript type definitions for the Movie data structure.
+
+## Installation
+
+To use this component, ensure you have:
+
+- Node.js installed
+- npm or yarn for package management
+
+Clone this repository and install dependencies:
+```sh
+git clone [your-repository-url]
+cd [repository-name]
+npm install
+# or
+yarn install
+
+
+## Layouts
+<a href="https://github.com/itsyst/react-context-effects">
+ <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-1.png" alt="home" border="0"> 
+ <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-2.png" alt="login" border="0"> 
+ <img src="https://github.com/itsyst/react-context-effects/blob/master/src/assets/hooks-1.png" alt="movies" border="0"> </a>
+
