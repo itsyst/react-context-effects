@@ -1,11 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import Users from './components/admin/Users';
 import Counters from './components/counters/Counters';
 import MovieList from './components/movies/MovieList';
-import Users from './components/admin/Users';
+import TaskList from './components/tasks/TaskList';
+import useDocumentTitle from './hooks/useDocumentTitle';
 import CartProvider from './providers/CartProvider';
 import UserProvider from './providers/UserProvider';
-import useDocumentTitle from './hooks/useDocumentTitle';
 
 function App() {
 	useDocumentTitle('Hooks-Effects');
@@ -16,6 +17,7 @@ function App() {
 					<Counters title="Counters" />
 					<Users title="Users" />
 					<MovieList title="Movies" />
+					<TaskList />
 				</div>
 			</UserProvider>
 		</CartProvider>
