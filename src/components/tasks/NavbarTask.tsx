@@ -1,5 +1,6 @@
 import { Container, Navbar } from 'react-bootstrap';
 import useTasks from '../../hooks/useTasks';
+import image from '../../assets/icon.png'
 
 const NavbarTask = () => {
 	const { tasks } = useTasks();
@@ -8,8 +9,8 @@ const NavbarTask = () => {
 			<Container>
 				<Navbar.Brand href="#">
 					<img
-						alt="Tasks Count"
-						src="/src/assets/icon.png"
+						alt=""
+						src={image}
 						width="30"
 						height="30"
 						className="d-inline-block align-top"
