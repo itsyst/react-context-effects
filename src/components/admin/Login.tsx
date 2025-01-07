@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import UserContext from '../../contexts/userContext';
-import { UserContextType, UserType } from '../../types/UserType';
+import useUser from '../../hooks/useUser';
+import { UserType } from '../../types/UserType';
 
 const Login = () => {
-	const currentUser = useContext<UserContextType | undefined>(UserContext);
+	const currentUser = useUser();
 	const user: UserType = {
 		name: 'Nishitha Rao',
 		email: 'nishitha.rao@example.com'

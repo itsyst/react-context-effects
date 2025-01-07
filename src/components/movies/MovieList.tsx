@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
-import UserContext from '../../contexts/userContext';
+import { useEffect, useState } from 'react';
 import moviesData from '../../data/movies-data';
+import useUser from '../../hooks/useUser';
 import { MovieType } from '../../types/MovieType';
 import Register from '../admin/Register';
 import MoviePage from './MoviePage';
@@ -13,7 +13,7 @@ interface MovieListProps {
 const MovieList = ({ title }: MovieListProps) => {
 	const [movies, setMovies] = useState<MovieType[]>([]);
 	const [movie, setMovie] = useState<MovieType | undefined>(undefined);
-	const { user } = useContext(UserContext);
+	const { user } = useUser();
 
 	const handleSelectedMovie = (movie: MovieType) => {
 		setMovie(movie);

@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-import UserContext from '../../contexts/userContext';
-import { UserContextType } from '../../types/UserType';
+import useUser from '../../hooks/useUser';
 
 const Logout = () => {
-	const currentUser = useContext<UserContextType | undefined>(UserContext);
+	const currentUser = useUser();
 
 	return (
 		<button

@@ -1,11 +1,10 @@
-import { useContext } from 'react';
+import useUser from '../../hooks/useUser';
 import Login from './Login';
 import Logout from './Logout';
-import UserContext from '../../contexts/userContext';
 
 const Register = () => {
 	// Using React's useContext hook to consume context
-	const { user } = useContext(UserContext);
+	const { user } = useUser();
 
 	return (
 		<div
