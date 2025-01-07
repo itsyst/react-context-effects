@@ -1,13 +1,14 @@
 import { useReducer } from 'react';
 import tasksReducer from '../reducers/tasksReducer';
 import authReducer from '../reducers/authReducer';
+import Task from './Task';
 
 const TaskList = () => {
 	const [tasks, dispatch] = useReducer(tasksReducer, []);
 	const [user, transmit] = useReducer(authReducer, '');
 
 	return (
-		<div className=" row bg-dark py-4">
+		<div className="row bg-dark py-4">
 			<div className="col-2">
 				<button
 					onClick={() =>
@@ -43,20 +44,9 @@ const TaskList = () => {
 				)}
 			</div>
 			<div className="col-10">
-				<ul className="list-group ">
+				<ul className="list-group">
 					{tasks.map((task) => (
-						<li
-							key={task.id}
-							className="list-group-item d-flex justify-content-space-between"
-						>
-							<span className="flex-grow-1 align-self-center">{task.title}</span>
-							<button
-								className="btn btn-outline-danger"
-								onClick={() => dispatch({ type: 'DELETE', taskId: task.id })}
-							>
-								Delete
-							</button>
-						</li>
+						<Task key={task.id} task={task} onDispatch={dispatch} />
 					))}
 				</ul>
 			</div>

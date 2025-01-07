@@ -10,14 +10,19 @@ interface DeleteTask {
     taskId: number
 }
 
-type TaskAction = AddTask | DeleteTask;
+export type TaskAction = AddTask | DeleteTask;
 
 const tasksReducer = (tasks: TaskType[], action: TaskAction): TaskType[] => {
     switch (action.type) {
         case 'ADD':
-            return [action.task, ...tasks]
+            // Add the new task to the beginning of the array
+            return [action.task, ...tasks];
         case 'DELETE':
-            return tasks.filter((t) => t.id !== action.taskId)
+            // Remove the task with the matching ID
+            return tasks.filter((task) => task.id !== action.taskId);
+        default:
+            // Handle any unexpected action types by returning the current state
+            return tasks;
     }
 }
 
