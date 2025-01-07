@@ -1,22 +1,15 @@
-import { useReducer } from 'react';
-import counterReducer from '../reducers/counterReducer';
+import userCounterStore from './store';
 
 const Counter = () => {
-	const [value, dispatch] = useReducer(counterReducer, 0);
+	const { counter, increment, reset } = userCounterStore();
 
 	return (
 		<div className="d-flex align-items-center">
-			<div className="text-white pe-2 "> Count: {value} </div>
-			<button
-				className="btn btn-primary"
-				onClick={() => dispatch({ type: 'INCREMENT' })}
-			>
+			<div className="text-white pe-2 "> Count: {counter} </div>
+			<button className="btn btn-primary" onClick={increment}>
 				Increase
 			</button>
-			<button
-				className="btn btn-danger ms-2"
-				onClick={() => dispatch({ type: 'RESET' })}
-			>
+			<button className="btn btn-danger ms-2" onClick={reset}>
 				Reset
 			</button>
 		</div>

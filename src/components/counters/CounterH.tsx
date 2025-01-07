@@ -1,8 +1,9 @@
 import { useState } from 'react';
- 
+import userCounterStore from './store';
+
 const Counter = () => {
+	const { counter, increment } = userCounterStore();
 	const [name, setName] = useState('');
-	const [count, setCount] = useState(0);
 
 	return (
 		<div className="d-flex align-items-center justify-content-start mt-2">
@@ -13,12 +14,9 @@ const Counter = () => {
 				placeholder="Enter name"
 			/>
 			<div className="d-flex align-items-center justify-content-space-between ms-2 col-6">
-				<div className="text-white font-weight-bold">{`${name} has clicked ${count} times!`}</div>
+				<div className="text-white font-weight-bold">{`${name} has clicked ${counter} times!`}</div>
 
-				<button
-					className="btn btn-secondary ms-2"
-					onClick={() => setCount(count + 1)}
-				>
+				<button className="btn btn-secondary ms-2" onClick={() => increment}>
 					Increase
 				</button>
 			</div>
