@@ -14,8 +14,8 @@ const NavbarTask = () => {
 						height="30"
 						className="d-inline-block align-top"
 					/>{' '}
-					Tasks Count{' '}
-					<span className="badge text-bg-secondary">{tasks.length}</span>
+					<span>Tasks Count</span>
+					<span className="badge text-bg-secondary ms-2">{tasks.length}</span>
 				</Navbar.Brand>
 			</Container>
 		</Navbar>
@@ -23,4 +23,3 @@ const NavbarTask = () => {
 };
 
 export default NavbarTask;
-
