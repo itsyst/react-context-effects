@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import UserContext from '../context/userContext';
+import UserContext from '../contexts/userContext';
 import { UserContextType, UserType } from '../types/UserType';
 
 interface UserProviderProps {

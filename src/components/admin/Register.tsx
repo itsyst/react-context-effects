@@ -1,12 +1,11 @@
 import { useContext } from 'react';
-import UserContext from '../../context/userContext';
-import { UserContextType } from '../../types/UserType';
 import Login from './Login';
 import Logout from './Logout';
+import UserContext from '../../contexts/userContext';
 
 const Register = () => {
 	// Using React's useContext hook to consume context
-	const currentUser = useContext<UserContextType | undefined>(UserContext);
+	const { user } = useContext(UserContext);
 
 	return (
 		<div
@@ -14,14 +13,10 @@ const Register = () => {
 			style={{ backgroundColor: '#DA498D' }}
 		>
 			<h1 className="text-uppercase text-nowrap text-light">Login</h1>
-			{currentUser?.user ? (
+			{user ? (
 				<ul className="list-group mb-2">
-					<li className="list-group-item">
-						{currentUser ? currentUser.user?.name : '...'}
-					</li>
-					<li className="list-group-item">
-						{currentUser ? currentUser.user?.email : '...'}
-					</li>
+					<li className="list-group-item">{user ? user?.name : '...'}</li>
+					<li className="list-group-item">{user ? user?.email : '...'}</li>
 				</ul>
 			) : (
 				<></>

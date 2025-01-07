@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import UserContext from '../../context/userContext';
+import UserContext from '../../contexts/userContext';
 import { UserContextType } from '../../types/UserType';
 
 const Logout = () => {

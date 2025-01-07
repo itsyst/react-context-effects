@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import UserContext from '../../context/userContext';
+import UserContext from '../../contexts/userContext';
 import moviesData from '../../data/movies-data';
 import { MovieType } from '../../types/MovieType';
-import { UserContextType } from '../../types/UserType';
 import Register from '../admin/Register';
 import MoviePage from './MoviePage';
 import MovieRow from './MovieRow';
@@ -14,7 +13,7 @@ interface MovieListProps {
 const MovieList = ({ title }: MovieListProps) => {
 	const [movies, setMovies] = useState<MovieType[]>([]);
 	const [movie, setMovie] = useState<MovieType | undefined>(undefined);
-	const userContext = useContext<UserContextType | undefined>(UserContext);
+	const { user } = useContext(UserContext);
 
 	const handleSelectedMovie = (movie: MovieType) => {
 		setMovie(movie);
@@ -30,7 +29,7 @@ const MovieList = ({ title }: MovieListProps) => {
 				<div className="row">
 					<div className="col-md-8">
 						<h1 className="text-left mb-4 text-uppercase text-light">{title}</h1>
-						{userContext?.user ? (
+						{user ? (
 							<div className="row row-cols-1 row-cols-md-3 g-4">
 								{movies.map((movie: MovieType) => (
 									<MovieRow

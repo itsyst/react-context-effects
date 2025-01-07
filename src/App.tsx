@@ -7,6 +7,7 @@ import CartProvider from './providers/CartProvider';
 import UserProvider from './providers/UserProvider';
 import useDocumentTitle from './hooks/useDocumentTitle';
 import TaskList from './components/tasks/TaskList';
+import TasksProvider from './providers/TasksProvider';
 
 function App() {
 	useDocumentTitle('Hooks-Effects');
@@ -16,8 +17,11 @@ function App() {
 				<div className="App">
 					<Counters title="Counters" />
 					<Users title="Users" />
+
 					<MovieList title="Movies" />
-					<TaskList />
+					<TasksProvider>
+						<TaskList />
+					</TasksProvider>
 				</div>
 			</UserProvider>
 		</CartProvider>

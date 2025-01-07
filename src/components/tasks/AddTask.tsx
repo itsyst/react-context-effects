@@ -14,7 +14,7 @@ const AddTask = ({ onDispose }: AddTaskProps) => {
 					task: { id: Date.now(), title: 'Task' + Date.now() }
 				})
 			}
-			className="btn btn-primary my-3"
+			className="btn btn-primary my-3 me-2"
 		>
 			Add Task
 		</button>

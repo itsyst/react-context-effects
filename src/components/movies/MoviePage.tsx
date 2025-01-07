@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import UserContext from '../../context/userContext';
+import UserContext from '../../contexts/userContext';
 import { MovieType } from '../../types/MovieType';
 import { UserContextType } from '../../types/UserType';
 import Genre from './Genre';

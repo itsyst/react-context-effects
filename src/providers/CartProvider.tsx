@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import CartContext from '../context/cartContext';
+import CartContext from '../contexts/cartContext';
 import { CartContextType, CartType } from '../types/CartType';
 
 interface CartProviderProps {
