@@ -1,13 +1,10 @@
-import useUser from '../../hooks/useUser';
+import useAuth from '../../hooks/useAuth';
 
 const Logout = () => {
-	const currentUser = useUser();
+	const {user, onLogout} = useAuth();
 
 	return (
-		<button
-			className="btn btn-secondary"
-			onClick={() => currentUser && currentUser.onLogout({})}
-		>
+		<button className="btn btn-secondary" onClick={() => user && onLogout(user)}>
 			Logout
 		</button>
 	);

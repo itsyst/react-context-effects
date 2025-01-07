@@ -10,7 +10,7 @@ import TaskList from './components/tasks/TaskList';
 import TasksProvider from './providers/TasksProvider';
 
 function App() {
-	useDocumentTitle('Hooks-Effects');
+	useDocumentTitle('E-R-H-C');
 	return (
 		<CartProvider>
 			<UserProvider>

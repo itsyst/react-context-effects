@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useUser from '../../hooks/useUser';
+import useAuth from '../../hooks/useAuth';
 import { MovieType } from '../../types/MovieType';
 import Genre from './Genre';
 import Movie from './Movie';
@@ -9,7 +9,7 @@ interface MoviePageProps {
 }
 
 const MoviePage = ({ movie }: MoviePageProps) => {
-	const { user } = useUser();
+	const { user } = useAuth();
 	const [movieDetails, setMovieDetails] = useState<MovieType | undefined>();
 
 	useEffect(() => {

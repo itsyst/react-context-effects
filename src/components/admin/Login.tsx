@@ -1,9 +1,10 @@
-import useUser from '../../hooks/useUser';
+import useAuth from '../../hooks/useAuth';
 import { UserType } from '../../types/UserType';
 
 const Login = () => {
-	const currentUser = useUser();
-	const user: UserType = {
+	const { onLogin } = useAuth();
+
+	const currentUser: UserType = {
 		name: 'Nishitha Rao',
 		email: 'nishitha.rao@example.com'
 	};
@@ -11,7 +12,7 @@ const Login = () => {
 	return (
 		<button
 			className="btn btn-primary me-2"
-			onClick={() => currentUser && currentUser.onLogin(user)}
+			onClick={() => onLogin(currentUser)}
 		>
 			Login
 		</button>

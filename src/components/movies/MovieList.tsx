@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import moviesData from '../../data/movies-data';
-import useUser from '../../hooks/useUser';
+import useAuth from '../../hooks/useAuth';
 import { MovieType } from '../../types/MovieType';
 import Register from '../admin/Register';
 import MoviePage from './MoviePage';
@@ -13,7 +13,7 @@ interface MovieListProps {
 const MovieList = ({ title }: MovieListProps) => {
 	const [movies, setMovies] = useState<MovieType[]>([]);
 	const [movie, setMovie] = useState<MovieType | undefined>(undefined);
-	const { user } = useUser();
+	const { user } = useAuth();
 
 	const handleSelectedMovie = (movie: MovieType) => {
 		setMovie(movie);
