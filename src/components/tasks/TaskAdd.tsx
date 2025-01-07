@@ -5,7 +5,7 @@ interface AddTaskProps {
 	onDispose: Dispatch<TaskAction>;
 }
 
-const AddTask = ({ onDispose }: AddTaskProps) => {
+const TaskAdd = ({ onDispose }: AddTaskProps) => {
 	return (
 		<button
 			onClick={() =>
@@ -21,4 +21,4 @@ const AddTask = ({ onDispose }: AddTaskProps) => {
 	);
 };
 
-export default AddTask;
+export default TaskAdd;

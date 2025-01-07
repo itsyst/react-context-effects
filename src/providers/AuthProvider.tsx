@@ -2,11 +2,11 @@ import { ReactNode, useState } from 'react';
 import UserContext from '../contexts/authContext';
 import { UserContextType, UserType } from '../types/UserType';
 
-interface UserProviderProps {
+interface AuthProviderProps {
 	children: ReactNode;
 }
 
-const UserProvider = ({ children }: UserProviderProps) => {
+const AuthProvider = ({ children }: AuthProviderProps) => {
 	const [user, setUser] = useState<UserType | undefined>(undefined);
 
 	const onLogin = (user: UserType) => {
@@ -33,4 +33,4 @@ const UserProvider = ({ children }: UserProviderProps) => {
 	);
 };
 
-export default UserProvider;
+export default AuthProvider;

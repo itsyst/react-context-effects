@@ -1,8 +1,8 @@
 import { useContext, useReducer } from 'react';
 import authReducer from '../reducers/authReducer';
 import Task from './Task';
-import Status from './Status';
-import NavbarTask from './NavbarTask';
+import TaskStatus from './TaskStatus';
+import TaskNavbar from './TaskNavbar';
 import TasksContext from '../../contexts/tasksContext';
 
 const TaskList = () => {
@@ -11,10 +11,10 @@ const TaskList = () => {
 
 	return (
 		<>
-			<NavbarTask />
+			<TaskNavbar/>
 			<div className="row bg-dark py-4">
 				<div className="col-2">
-					<Status user={user} onTransmit={transmit} onDispose={dispatch} />
+					<TaskStatus user={user} onTransmit={transmit} onDispose={dispatch} />
 				</div>
 				<div className="col-10">
 					<ul className="list-group">

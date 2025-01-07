@@ -4,7 +4,7 @@ import Counters from './components/counters/Counters';
 import MovieList from './components/movies/MovieList';
 import Users from './components/admin/Users';
 import CartProvider from './providers/CartProvider';
-import UserProvider from './providers/UserProvider';
+import AuthProvider from './providers/AuthProvider';
 import useDocumentTitle from './hooks/useDocumentTitle';
 import TaskList from './components/tasks/TaskList';
 import TasksProvider from './providers/TasksProvider';
@@ -13,7 +13,7 @@ function App() {
 	useDocumentTitle('E-R-H-C');
 	return (
 		<CartProvider>
-			<UserProvider>
+			<AuthProvider>
 				<div className="App">
 					<Counters title="Counters" />
 					<Users title="Users" />
@@ -23,7 +23,7 @@ function App() {
 						<TaskList />
 					</TasksProvider>
 				</div>
-			</UserProvider>
+			</AuthProvider>
 		</CartProvider>
 	);
 }

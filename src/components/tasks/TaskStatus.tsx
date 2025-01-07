@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
 import { Action } from '../reducers/authReducer';
-import AddTask from './AddTask';
+import AddTask from './TaskAdd';
 import { TaskAction } from '../reducers/tasksReducer';
 
 interface StatusProps {
@@ -9,7 +9,7 @@ interface StatusProps {
 	onDispose: Dispatch<TaskAction>;
 }
 
-const Status = ({ user, onTransmit, onDispose }: StatusProps) => {
+const TaskStatus = ({ user, onTransmit, onDispose }: StatusProps) => {
 	return (
 		<>
 			<AddTask onDispose={onDispose} />
@@ -38,4 +38,4 @@ const Status = ({ user, onTransmit, onDispose }: StatusProps) => {
 	);
 };
 
-export default Status;
+export default TaskStatus;

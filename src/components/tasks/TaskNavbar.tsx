@@ -1,8 +1,8 @@
 import { Container, Navbar } from 'react-bootstrap';
 import useTasks from '../../hooks/useTasks';
-import image from '../../assets/icon.png'
+import image from '../../assets/icon.png';
 
-const NavbarTask = () => {
+const TaskNavbar = () => {
 	const { tasks } = useTasks();
 	return (
 		<Navbar className="bg-body-tertiary">
@@ -23,4 +23,4 @@ const NavbarTask = () => {
 	);
 };
 
-export default NavbarTask;
+export default TaskNavbar;

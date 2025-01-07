@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import CartContext from '../../contexts/cartContext';
 
-const Carts = () => {
+const TaskCarts = () => {
 	const cartContext = useContext(CartContext);
 
 	return (
@@ -15,4 +15,4 @@ const Carts = () => {
 	);
 };
 
-export default Carts;
+export default TaskCarts;
