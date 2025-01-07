@@ -1,9 +1,8 @@
-import { useContext } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
-import TasksContext from '../../contexts/tasksContext';
+import useTasks from '../../hooks/useTasks';
 
 const NavbarTask = () => {
-	const { tasks } = useContext(TasksContext);
+	const { tasks } = useTasks();
 	return (
 		<Navbar className="bg-body-tertiary">
 			<Container>
@@ -24,3 +23,4 @@ const NavbarTask = () => {
 };
 
 export default NavbarTask;
+
