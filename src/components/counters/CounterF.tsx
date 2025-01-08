@@ -1,7 +1,7 @@
-import userCounterStore from './store';
+import { userCounterStoreF } from './store';
 
 const CounterF = () => {
-	const { counter, increment, reset } = userCounterStore();
+ 	const { counter, increment, reset } = userCounterStoreF();
 
 	return (
 		<div className="d-flex align-items-center justify-content-start mx-2">

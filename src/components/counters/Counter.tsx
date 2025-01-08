@@ -1,7 +1,7 @@
-import userCounterStore from './store';
-
+import { userCounterStore } from "./store";
+ 
 const Counter = () => {
-	const { counter, increment, reset } = userCounterStore();
+ 	const { counter, increment, reset } = userCounterStore();
 
 	return (
 		<div className="d-flex align-items-center">
