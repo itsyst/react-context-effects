@@ -1,17 +1,15 @@
 import Register from '../admin/Register';
-import useAuthStore from '../admin/store/store';
 import MoviePage from './MoviePage';
 import MovieRow from './MovieRow';
-import useMovieStore from './store/store';
-import { MovieType } from './types/MovieType';
+import { MovieType } from './MovieType';
+import useMovieStore from './store';
 
 interface MovieListProps {
 	title: string;
 }
 
 const MovieList = ({ title }: MovieListProps) => {
-	const { movie, movies, handleSelectedMovie } = useMovieStore();
-	const { user } = useAuthStore();
+	const { user, movies, handleSelectedMovie } = useMovieStore();
 
 	return (
 		<div className="row pb-4">
@@ -38,7 +36,7 @@ const MovieList = ({ title }: MovieListProps) => {
 
 					<div className="col-md-4">
 						<Register />
-						<MoviePage movie={movie} />
+						<MoviePage />
 					</div>
 				</div>
 			</div>

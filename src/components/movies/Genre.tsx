@@ -1,28 +1,18 @@
-import { useEffect, useState } from 'react';
-import withTooltip from '../hoc/withTooltip';
-import { ActorType, GenreType, MovieType } from './types/MovieType';
- 
-interface GenreProps {
-	showTooltip?: boolean;
-	movie: MovieType | null;
-}
+import withTooltip from '../utils/withTooltip';
+import { ActorType, GenreType } from './MovieType';
+import useMovieStore from './store';
 
-const Genre = ({ showTooltip, movie }: GenreProps) => {
-	const [movieDetails, setMovieDetails] = useState<MovieType | null>(null);
-
-	useEffect(() => {
-		setMovieDetails(movie);
-	}, [movie]);
-
+const Genre = ({ showTooltip }: { showTooltip?: boolean }) => {
+	const { movie } = useMovieStore();
 	return (
 		<div className="d-flex flex-row bd-highlight mb-3 ps-4" role="button">
-			{movieDetails && (
+			{movie && (
 				<>
 					<div className="flex-column">
 						<div>
 							<h2 className="text-light">Genres</h2>
 							<ul>
-								{movieDetails.genre.map((genre: GenreType) => (
+								{movie.genre.map((genre: GenreType) => (
 									<li key={genre.id} className="text-light">
 										{genre.name}
 									</li>
@@ -32,7 +22,7 @@ const Genre = ({ showTooltip, movie }: GenreProps) => {
 						<div>
 							<h2 className="text-light">Actors</h2>
 							<ul>
-								{movieDetails.actors.map((actor:ActorType) => (
+								{movie.actors.map((actor: ActorType) => (
 									<li key={actor.id} className="text-light text-nowrap">
 										{actor.name}
 									</li>
@@ -45,12 +35,12 @@ const Genre = ({ showTooltip, movie }: GenreProps) => {
 							className="badge bg-white text-success ms-2 d-flex flex-column text-start position-absolute"
 							style={{ top: '240px', left: '120px' }}
 						>
-							<b>Awards: {movieDetails?.boxOffice}</b>
+							<b>Awards: {movie?.boxOffice}</b>
 							<img
-								src={movieDetails?.poster}
+								src={movie?.poster}
 								className="img-thumbnail rounded-circle"
 								style={{ width: '50px', height: '50px' }}
-								alt={movieDetails.title}
+								alt={movie.title}
 							/>
 						</div>
 					)}
