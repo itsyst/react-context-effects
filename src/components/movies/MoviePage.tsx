@@ -1,23 +1,17 @@
-import { useEffect, useState } from 'react';
-import useAuth from '../../hooks/useAuth';
-import { MovieType } from '../../types/MovieType';
+import { MovieType } from '../movies/types/MovieType';
 import Genre from './Genre';
 import Movie from './Movie';
+import useMovie from './hooks/useMovie';
 
 interface MoviePageProps {
-	movie: MovieType | undefined;
+	movie: MovieType | null;
 }
 
 const MoviePage = ({ movie }: MoviePageProps) => {
-	const { user } = useAuth();
-	const [movieDetails, setMovieDetails] = useState<MovieType | undefined>();
-
-	useEffect(() => {
-		setMovieDetails(movie);
-	}, [movie]);
+	const { user, movieDetails } = useMovie({ movie });
 
 	return (
-		<div className="row bg-dark d-flex align-items-center mt-2 position-relative">
+		<div className="row d-flex align-items-center mt-2 position-relative">
 			<h1 className="text-left mb-4 text-uppercase text-light">Movie Page</h1>
 			<div className="px-2">
 				{user ? (

@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
-import { TaskType } from '../../types/TaskType';
-import { TaskAction } from '../reducers/tasksReducer';
+import { TaskType } from '../tasks/types/TaskType';
+import { TaskAction } from '../tasks/reducers/tasksReducer';
  
 interface TaskProps {
 	task: TaskType;

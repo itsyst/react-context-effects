@@ -1,32 +1,31 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { UserType } from '../../types/UserType';
+ 
+import useUsers from './hooks/useUsers';
+import useAuthStore from './store/store';
+import { UserType } from './types/UserType';
 
 interface UsersProps {
 	title: string;
 }
 
 const Users = ({ title }: UsersProps) => {
-	const [users, setUsers] = useState<UserType[]>([]);
+	const { user } = useAuthStore();
+	const { users, loading, error } = useUsers();
 
-	useEffect(() => {
-		const getUsers = async () => {
-			try {
-				const result = await axios.get<UserType[]>(
-					'https://jsonplaceholder.typicode.com/users'
-				);
-				setUsers(result.data);
-			} catch (error) {
-				console.error('Error fetching users:', error);
-			}
-		};
+	if (!user) {
+		return (
+			<div className="alert alert-warning text-center" role="alert">
+				Please log in to view the user list.
+			</div>
+		);
+	}
 
-		getUsers();
-	}, []); // Empty dependency array ensures it runs only once on mount
+	if (loading) return <div>Loading users...</div>;
+	if (error) return <div className="alert alert-danger">{error}</div>;
 
 	return (
-		<div className="row bg-dark">
+		<>
 			<h2 className="text-uppercase text-light">{title}</h2>
+
 			<div className="table-responsive">
 				<table className="table">
 					<thead>
@@ -39,7 +38,7 @@ const Users = ({ title }: UsersProps) => {
 						</tr>
 					</thead>
 					<tbody>
-						{users.map((user) => (
+						{users.map((user:UserType) => (
 							<tr key={user.id}>
 								<th scope="row">{user.id}</th>
 								<th scope="row">{user.name}</th>
@@ -51,7 +50,7 @@ const Users = ({ title }: UsersProps) => {
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</>
 	);
 };
 

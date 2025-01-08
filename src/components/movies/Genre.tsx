@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import withTooltip from '../../hoc/withTooltip';
-import { MovieType } from '../../types/MovieType';
-
+import withTooltip from '../hoc/withTooltip';
+import { ActorType, GenreType, MovieType } from './types/MovieType';
+ 
 interface GenreProps {
 	showTooltip?: boolean;
-	movie: MovieType | undefined;
+	movie: MovieType | null;
 }
 
 const Genre = ({ showTooltip, movie }: GenreProps) => {
-	const [movieDetails, setMovieDetails] = useState<MovieType | undefined>();
+	const [movieDetails, setMovieDetails] = useState<MovieType | null>(null);
 
 	useEffect(() => {
 		setMovieDetails(movie);
@@ -22,7 +22,7 @@ const Genre = ({ showTooltip, movie }: GenreProps) => {
 						<div>
 							<h2 className="text-light">Genres</h2>
 							<ul>
-								{movieDetails.genre.map((genre) => (
+								{movieDetails.genre.map((genre: GenreType) => (
 									<li key={genre.id} className="text-light">
 										{genre.name}
 									</li>
@@ -32,7 +32,7 @@ const Genre = ({ showTooltip, movie }: GenreProps) => {
 						<div>
 							<h2 className="text-light">Actors</h2>
 							<ul>
-								{movieDetails.actors.map((actor) => (
+								{movieDetails.actors.map((actor:ActorType) => (
 									<li key={actor.id} className="text-light text-nowrap">
 										{actor.name}
 									</li>

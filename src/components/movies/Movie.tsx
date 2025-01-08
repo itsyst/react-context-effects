@@ -1,24 +1,21 @@
 import { useEffect, useState } from 'react';
-import withTooltip from '../../hoc/withTooltip';
-import { MovieType } from '../../types/MovieType';
+import withTooltip from '../hoc/withTooltip';
+import { MovieType } from './types/MovieType';
 
 interface MovieProps {
 	showTooltip?: boolean;
-	movie: MovieType | undefined;
+	movie: MovieType | null;
 }
 
 const Movie = ({ showTooltip, movie }: MovieProps) => {
-	const [movieDetails, setMovieDetails] = useState<MovieType | undefined>();
+	const [movieDetails, setMovieDetails] = useState<MovieType | null>(null);
 
 	useEffect(() => {
 		setMovieDetails(movie);
 	}, [movie]);
 
 	return (
-		<div
-			className="d-flex bd-highlight mb-3 ps-4"
-			role="button"
-		>
+		<div className="d-flex bd-highlight mb-3 ps-4" role="button">
 			{movieDetails && (
 				<>
 					<div className="flex-column">
@@ -28,7 +25,7 @@ const Movie = ({ showTooltip, movie }: MovieProps) => {
 					{showTooltip && (
 						<div
 							className="badge bg-white text-success ms-2 d-flex flex-column text-start position-absolute"
-							style={ { top: '50px', left:'120px' }}
+							style={{ top: '50px', left: '120px' }}
 						>
 							<b>Awards: {movieDetails?.awards}</b>
 							<b>Language: {movieDetails?.language}</b>

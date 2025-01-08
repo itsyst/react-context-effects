@@ -1,30 +1,20 @@
-import { useEffect, useState } from 'react';
-import moviesData from '../../data/movies-data';
-import useAuth from '../../hooks/useAuth';
-import { MovieType } from '../../types/MovieType';
 import Register from '../admin/Register';
+import useAuthStore from '../admin/store/store';
 import MoviePage from './MoviePage';
 import MovieRow from './MovieRow';
+import useMovieStore from './store/store';
+import { MovieType } from './types/MovieType';
 
 interface MovieListProps {
 	title: string;
 }
 
 const MovieList = ({ title }: MovieListProps) => {
-	const [movies, setMovies] = useState<MovieType[]>([]);
-	const [movie, setMovie] = useState<MovieType | undefined>(undefined);
-	const { user } = useAuth();
-
-	const handleSelectedMovie = (movie: MovieType) => {
-		setMovie(movie);
-	};
-
-	useEffect(() => {
-		setMovies(moviesData as MovieType[]);
-	}, [movies]);
+	const { movie, movies, handleSelectedMovie } = useMovieStore();
+	const { user } = useAuthStore();
 
 	return (
-		<div className="row bg-dark pb-4">
+		<div className="row pb-4">
 			<div className="container">
 				<div className="row">
 					<div className="col-md-8">

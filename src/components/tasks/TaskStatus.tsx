@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
-import { Action } from '../reducers/authReducer';
+import { Action } from '../admin/reducers/authReducer';
 import AddTask from './TaskAdd';
-import { TaskAction } from '../reducers/tasksReducer';
+import { TaskAction } from './reducers/tasksReducer';
 
 interface StatusProps {
 	user: string;

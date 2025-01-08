@@ -1,10 +1,10 @@
-import useAuth from '../../hooks/useAuth';
+import useAuthStore from './store/store';
 
 const Logout = () => {
-	const {user, onLogout} = useAuth();
+	const { onLogout } = useAuthStore();
 
 	return (
-		<button className="btn btn-secondary" onClick={() => user && onLogout(user)}>
+		<button className="btn btn-secondary" onClick={onLogout}>
 			Logout
 		</button>
 	);

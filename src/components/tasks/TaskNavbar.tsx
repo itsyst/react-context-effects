@@ -1,5 +1,5 @@
 import { Container, Navbar } from 'react-bootstrap';
-import useTasks from '../../hooks/useTasks';
+import useTasks from '../tasks/hooks/useTasks';
 import image from '../../assets/icon.png';
 
 const TaskNavbar = () => {

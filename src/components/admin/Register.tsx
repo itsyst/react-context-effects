@@ -1,10 +1,9 @@
-import useAuth from '../../hooks/useAuth';
 import Login from './Login';
 import Logout from './Logout';
+import useAuthStore from './store/store';
 
 const Register = () => {
-	// Using React's useContext hook to consume context
-	const { user } = useAuth();
+	const { user } = useAuthStore();
 
 	return (
 		<div

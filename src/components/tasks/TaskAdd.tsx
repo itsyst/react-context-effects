@@ -1,5 +1,5 @@
 import { Dispatch } from 'react';
-import { TaskAction } from '../reducers/tasksReducer';
+import { TaskAction } from '../tasks/reducers/tasksReducer';
 
 interface AddTaskProps {
 	onDispose: Dispatch<TaskAction>;

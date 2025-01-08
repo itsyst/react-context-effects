@@ -1,8 +1,8 @@
-import useAuth from '../../hooks/useAuth';
-import { UserType } from '../../types/UserType';
+import { UserType } from './types/UserType';
+import useAuthStore from './store/store';
 
 const Login = () => {
-	const { onLogin } = useAuth();
+	const { onLogin } = useAuthStore();
 
 	const currentUser: UserType = {
 		name: 'Nishitha Rao',

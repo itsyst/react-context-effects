@@ -1,4 +1,4 @@
-import { MovieType } from '../../types/MovieType';
+import { MovieType } from '../movies/types/MovieType';
 
 interface MovieRowProps {
 	movie: MovieType;
