@@ -1,10 +1,10 @@
 import { useContext, useReducer } from 'react';
 import authReducer from '../admin/reducers/authReducer';
-import Task from './Task';
-import TaskStatus from './TaskStatus';
+ import Task from './Task';
 import TaskNavbar from './TaskNavbar';
-import TasksContext from '../tasks/contexts/tasksContext';
-
+import TaskStatus from './TaskStatus';
+import TasksContext from './tasksContext';
+ 
 const TaskList = () => {
 	const [user, transmit] = useReducer(authReducer, '');
 	const { tasks, dispatch } = useContext(TasksContext);
