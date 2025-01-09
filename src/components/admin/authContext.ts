@@ -1,6 +1,6 @@
 import { createContext } from 'react';
-import { UserContextType } from '../types/UserType';
- 
+import { UserContextType } from './UserType';
+   
 const AuthContext = createContext<UserContextType>({} as UserContextType);
 AuthContext.displayName = "AuthContext";
 

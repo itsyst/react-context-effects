@@ -1,15 +1,17 @@
- 
-import useUsers from './hooks/useUsers';
-import useAuthStore from './store/store';
-import { UserType } from './types/UserType';
+import { useEffect } from 'react';
+import useAuthStore from './store';
+import { UserType } from './UserType';
 
 interface UsersProps {
 	title: string;
 }
 
 const Users = ({ title }: UsersProps) => {
-	const { user } = useAuthStore();
-	const { users, loading, error } = useUsers();
+	const { user, users, loading, error, fetchUsers } = useAuthStore();
+
+	useEffect(() => {
+		fetchUsers();
+	}, [fetchUsers]);
 
 	if (!user) {
 		return (
@@ -38,7 +40,7 @@ const Users = ({ title }: UsersProps) => {
 						</tr>
 					</thead>
 					<tbody>
-						{users.map((user:UserType) => (
+						{users.map((user: UserType) => (
 							<tr key={user.id}>
 								<th scope="row">{user.id}</th>
 								<th scope="row">{user.name}</th>

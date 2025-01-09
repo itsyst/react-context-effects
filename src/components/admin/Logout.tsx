@@ -1,4 +1,4 @@
-import useAuthStore from './store/store';
+import useAuthStore from './store';
 
 const Logout = () => {
 	const { onLogout } = useAuthStore();

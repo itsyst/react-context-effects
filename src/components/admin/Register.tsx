@@ -1,6 +1,6 @@
 import Login from './Login';
 import Logout from './Logout';
-import useAuthStore from './store/store';
+import useAuthStore from './store';
 
 const Register = () => {
 	const { user } = useAuthStore();

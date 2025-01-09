@@ -1,5 +1,5 @@
-import { UserType } from './types/UserType';
-import useAuthStore from './store/store';
+import { UserType } from './UserType';
+import useAuthStore from './store';
 
 const Login = () => {
 	const { onLogin } = useAuthStore();

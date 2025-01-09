@@ -1,11 +1,10 @@
-import { useContext } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import image from '../../assets/icon.png';
-import TasksContext from './tasksContext';
+import useTaskStore from './store';
 
 const TaskNavbar = () => {
 	// Extracting the tasks array from the TasksContext using the useContext hook
-	const { tasks } = useContext(TasksContext);
+	const { tasks } = useTaskStore();
 
 	return (
 		<Navbar className="bg-body-tertiary">

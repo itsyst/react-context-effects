@@ -1,21 +1,11 @@
-import { Dispatch } from 'react';
-import { TaskAction } from './TasksProvider';
+import useTaskStore from './store';
 
-// AddTaskProps interface defines the shape of the props object passed to TaskAdd component
-// **** The onDispose function is a Dispatch function that will handle TaskAction in the parent component
-interface AddTaskProps {
-	onDispose: Dispatch<TaskAction>;
-}
-
-const TaskAdd = ({ onDispose }: AddTaskProps) => {
+const TaskAdd = () => {
+	const { addTask } = useTaskStore();
+  
 	return (
 		<button
-			onClick={() =>
-				onDispose({
-					type: 'ADD',
-					task: { id: Date.now(), title: 'Task' + Date.now() }
-				})
-			}
+			onClick={() => addTask({ id: Date.now(), title: 'Task ' + Date.now() })}
 			className="btn btn-primary my-3 me-2"
 		>
 			Add Task
