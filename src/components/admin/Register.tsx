@@ -6,20 +6,13 @@ const Register = () => {
 	const { user } = useAuthStore();
 
 	return (
-		<div
-			className="mt-2 px-2 pb-2 rounded"
-			style={{ backgroundColor: '#DA498D' }}
-		>
-			<h1 className="text-uppercase text-nowrap text-light">Login</h1>
+		<div className="d-flex align-items-center">
 			{user ? (
-				<ul className="list-group mb-2">
-					<li className="list-group-item">{user ? user?.name : '...'}</li>
-					<li className="list-group-item">{user ? user?.email : '...'}</li>
-				</ul>
+				<p className="text-light fs-5 px-4 mb-0">{user ? user?.name : '...'}</p>
 			) : (
 				<></>
 			)}
-			<div className="pt-2">
+			<div>
 				<Login />
 				<Logout />
 			</div>
