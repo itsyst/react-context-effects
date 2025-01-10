@@ -13,7 +13,7 @@ const MovieRow = ({ movie, onSelect }: MovieRowProps) => {
 					src={movie.poster}
 					className="card-img-top"
 					alt={movie.title}
-					style={{ height: '300px', objectFit: 'cover' }}
+					style={{ height: '250px', objectFit: 'fill' }}
 				/>
 				<div className="card-body">
 					<h5 className="card-title">{movie.title}</h5>

@@ -1,4 +1,4 @@
-import { Container, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router';
 import image from '../../assets/icon.png';
 import useTaskStore from './store';
 
@@ -7,21 +7,23 @@ const TaskNavbar = () => {
 	const { tasks } = useTaskStore();
 
 	return (
-		<Navbar className="bg-body-tertiary">
-			<Container>
-				<Navbar.Brand href="#">
-					<img
-						alt=""
-						src={image}
-						width="30"
-						height="30"
-						className="d-inline-block align-top"
-					/>
-					<span>Tasks Count</span>
-					<span className="badge text-bg-secondary ms-2">{tasks.length}</span>
-				</Navbar.Brand>
-			</Container>
-		</Navbar>
+		<div className="bg-white p-2 rounded-pill">
+			<div className="container">
+				<nav className='d-flex align-items-center'>
+					<Link to="/tasks" className='text-decoration-none text-dark'>
+						<img
+							alt=""
+							src={image}
+							width="30"
+							height="30"
+							className="d-inline-block align-top"
+						/>
+						<span>Tasks Count</span>
+						<span className="badge text-bg-secondary ms-2">{tasks.length}</span>
+					</Link>
+				</nav>
+			</div>
+		</div>
 	);
 };
 

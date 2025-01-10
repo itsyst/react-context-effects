@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
 import { Users } from './components/admin';
 import { CartProvider } from './components/cart';
 import { Counters } from './components/counters';

@@ -10,19 +10,25 @@ const TaskList = () => {
 
 	return (
 		<>
-			<TaskNavbar />
-			{user && (
-				<div className="row py-4">
-					<div className="col-2">
-						<TaskStatus />
+			{user ? (
+				<div>
+					<TaskNavbar />
+					<div className="row py-4">
+						<div className="col-2">
+							<TaskStatus />
+						</div>
+						<div className="col-10">
+							<ul className="list-group">
+								{tasks.map((task) => (
+									<Task key={task.id} task={task} />
+								))}
+							</ul>
+						</div>
 					</div>
-					<div className="col-10">
-						<ul className="list-group">
-							{tasks.map((task) => (
-								<Task key={task.id} task={task} />
-							))}
-						</ul>
-					</div>
+				</div>
+			) : (
+				<div className="alert alert-warning text-center" role="alert">
+					Please log in to view the tasks.
 				</div>
 			)}
 		</>

@@ -5,9 +5,9 @@ import useMovieStore from './store';
 const MoviePage = () => {
 	const { user } = useMovieStore();
 	return (
-		<div className="row d-flex align-items-center mt-2 position-relative">
-			<h1 className="text-left mb-4 text-uppercase text-light">Movie Page</h1>
-			<div className="px-2">
+		<div className="row d-flex align-items-center mt-5 pt-3 position-relative">
+			<hr className='text-white'/>
+ 			<div className="px-2">
 				{user ? (
 					<div className="d-flex flex-column">
 						<Movie />

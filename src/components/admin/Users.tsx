@@ -26,7 +26,7 @@ const Users = ({ title }: UsersProps) => {
 
 	return (
 		<>
-			<h2 className="text-uppercase text-light">{title}</h2>
+			<h2 className="text-uppercase text-light mb-5">{title}</h2>
 
 			<div className="table-responsive">
 				<table className="table">

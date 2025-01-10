@@ -4,8 +4,8 @@ import { TaskType } from './TaskType';
 const Task = ({ task }: { task: TaskType }) => {
 	const { deleteTask } = useTaskStore();
 	return (
-		<li key={task.id} className="list-group-item d-flex justify-content-between">
-			<span className="flex-grow-1 align-self-center">{task.title}</span>
+		<li key={task.id} className="list-group-item d-flex justify-content-between rounded-pill mb-2">
+			<span className="flex-grow-1 align-self-center text-red">{task.title}</span>
 			<button
 				className="btn btn-outline-danger"
 				onClick={() => deleteTask(task.id)}
