@@ -1,4 +1,5 @@
-import { MovieType } from "./MovieType";
+import { Link } from 'react-router';
+import { MovieType } from './MovieType';
 
 interface MovieRowProps {
 	movie: MovieType;
@@ -7,7 +8,12 @@ interface MovieRowProps {
 
 const MovieRow = ({ movie, onSelect }: MovieRowProps) => {
 	return (
-		<div className="col" role="button" onClick={() => onSelect(movie)}>
+		<Link
+			to={`/movies/${movie.id}`}
+			className="col text-decoration-none"
+			role="button"
+			onClick={() => onSelect(movie)}
+		>
 			<div className="card h-100">
 				<img
 					src={movie.poster}
@@ -29,7 +35,7 @@ const MovieRow = ({ movie, onSelect }: MovieRowProps) => {
 					<small className="text-muted">{movie.plot.slice(0, 100)}...</small>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

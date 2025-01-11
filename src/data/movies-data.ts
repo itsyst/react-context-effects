@@ -238,5 +238,35 @@ export default [
         "boxOffice": "$1.081 billion",
         "production": "Warner Bros. Pictures",
         "website": "http://www.warnerbros.com/movies/the-dark-knight-rises"
+    },
+    {
+        "id": 10,
+        "title": "Fight Club",
+        "year": 1999,
+        "genre": [
+            { "id": 2, "name": "Drama" },
+            { "id": 7, "name": "Thriller" }
+        ],
+        "rating": 8.8,
+        "director": "David Fincher",
+        "actors": [
+            { "id": 35, "name": "Brad Pitt" },
+            { "id": 36, "name": "Edward Norton" },
+            { "id": 37, "name": "Helena Bonham Carter" },
+            { "id": 38, "name": "Meat Loaf" },
+            { "id": 39, "name": "Jared Leto" }
+        ],
+        "plot": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
+        "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg",
+        "trailer": "https://example.com/fight_club_trailer.mp4",
+        "runtime": 139,
+        "awards": "Nominated for 1 Oscar, 11 wins & 38 nominations total",
+        "country": "United States",
+        "language": "English",
+        "boxOffice": "$101.2 million",
+        "production": "20th Century Fox",
+        "website": "https://www.foxmovies.com/movies/fight-club"
     }
+
+
 ]
