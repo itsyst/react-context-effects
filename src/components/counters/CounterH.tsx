@@ -6,7 +6,7 @@ const Counter = () => {
 	return (
 		<>
 			<div className="d-flex flex-column flex-md-row justify-content-between mt-2">
-				<div className='col col-md-6'>
+				<div className="col col-md-6">
 					<input
 						className="form-control mb-3" // Reduced width
 						type="text"
@@ -29,7 +29,6 @@ const Counter = () => {
 					</div>
 				</div>
 			</div>
-			<hr className="text-white" />
 		</>
 	);
 };

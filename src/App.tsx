@@ -10,9 +10,9 @@ function App() {
 	return (
 		<CartProvider>
 			<div className="App">
-				<Counters title="Counters" />
-				<Users title="Users" />
-				<MovieList title="Movies" />
+				<Counters />
+				<Users />
+				<MovieList />
 				<TaskList />
 			</div>
 		</CartProvider>
