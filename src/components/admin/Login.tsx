@@ -4,6 +4,7 @@ import useAuthStore from './store';
 const Login = () => {
 	const { onLogin } = useAuthStore();
 	const currentUser: UserType = {
+		id: 1,
 		name: 'Nishitha Rao'
 	};
 
