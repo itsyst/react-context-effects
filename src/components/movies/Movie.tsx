@@ -3,6 +3,7 @@ import useMovieStore from './store';
 
 const Movie = () => {
 	const { movie } = useMovieStore();
+	
 	return (
 		<div className=" mt-5">
 			<div className="card mb-3 mx-auto">

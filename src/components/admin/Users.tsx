@@ -4,22 +4,11 @@ import useAuthStore from './store';
 import { UserType } from './UserType';
 
 const Users = () => {
-	const { user, users, loading, error, fetchUsers } = useAuthStore();
+	const { users, fetchUsers } = useAuthStore();
 
 	useEffect(() => {
 		fetchUsers();
 	}, [fetchUsers]);
-
-	if (!user) {
-		return (
-			<div className="alert alert-warning text-center" role="alert">
-				Please log in to view the user list.
-			</div>
-		);
-	}
-
-	if (loading) return <div>Loading users...</div>;
-	if (error) return <div className="alert alert-danger">{error}</div>;
 
 	return (
 		<div className="table-responsive">
