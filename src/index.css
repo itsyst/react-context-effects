@@ -12,6 +12,12 @@ body {
 	padding: 5px !important;
 }
 
+.active-link {
+	font-weight: bold !important;
+	/* border-bottom: 2px solid white !important; */
+	text-shadow: #242424 1px 0 10px;
+}
+
 #main {
 	max-width: 1280px;
 	margin: 0 auto;
